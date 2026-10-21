@@ -1,6 +1,9 @@
 const genres = ["Rock", "Pop", "Jazz"];
 const selectedGenres = new Set(); 
 
+import { createClient } from '@supabase/supabase-js'
+const supabase = createClient('https://aqwewhtbclsofnrvvqjf.supabase.co', 'sb_publishable_s-ITAmB0d6szJ7sy1sFCcw_7H1Pge4C', 'auth.persistSession = true')
+
 // Source - https://stackoverflow.com/a/1947531
 // Posted by Andy E, modified by community. See post 'Timeline' for change history
 // Retrieved 2026-10-19, License - CC BY-SA 3.0
@@ -49,6 +52,10 @@ function addGenre() {
         chip.className = "chip";
         genreList.appendChild(chip);
     };
+};
+
+async function saveAlbum() {
+    // pass
 };
 
 initChips(); 
