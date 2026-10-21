@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <link href="style.css" rel="stylesheet" type="text/css" media="all">
         <!-- <link rel="manifest" href="/manifest.json"> -->
-        <script src="script.js"></script>
         <link rel="apple-touch-icon" href="/icon-192.png">
     </head>
     <body>
@@ -15,31 +14,31 @@
                 <h1>Album Record</h1>
             </div>
             <div id="form">
-                <form>
-                    <label for="albumname">Album Name:</label><br>
-                    <input type="text" id="albumname" name="albumname"><br>
-                    <label for="artistname">Artist Name:</label><br>
-                    <input type="text" id="artistname" name="artistname"><br>
-                    <label for="datereleased">Date Released:</label><br>
-                    <input type="date" id="datereleased" name="datereleased"><br>
-                    <label for="albumrating">Rating:</label><br>
-                    <input type="text" id="albumrating" name="albumrating"><br>
-                    
-                    <div id="genrechips">
-                        <input id="newGenre" placeholder="Add a genre…">
-                        <button id="addGenre" onclick="addGenre()">Add</button>
-                    </div>
-
-                    <label for="nosongs">Number of Songs:</label><br>
-                    <input type="text" id="nosongs" name="nosongs"><br>
-                    <label for="noskips">Number of Skips:</label><br>
-                    <input type="text" id="noskips" name="noskips"><br>
-                    <!--top 3 songs?-->
-                    <label for="albumcomments">Comments:</label><br>
-                    <input type="text" id="albumcomments" name="albumcomments"><br>
-                    <input type="submit">
-                </form>
+                <label for="albumname">Album Name:</label><br>
+                <input type="text" id="albumname" name="albumname"><br>
+                <label for="artistname">Artist Name:</label><br>
+                <input type="text" id="artistname" name="artistname"><br>
+                <label for="datereleased">Date Released:</label><br>
+                <input type="date" id="datereleased" name="datereleased"><br>
+                <label for="albumrating">Rating:</label><br>
+                <input type="text" id="albumrating" name="albumrating"><br>
+                <div id="genrechips">
+                </div>
+                <div id="addGenreButton">
+                    <input id="newGenre" placeholder="Add a genre…">
+                    <button id="addGenre">Add</button>
+                </div>
+                <label for="nosongs">Number of Songs:</label><br>
+                <input type="text" id="nosongs" name="nosongs"><br>
+                <label for="noskips">Number of Skips:</label><br>
+                <input type="text" id="noskips" name="noskips"><br>
+                <!--top 3 songs?-->
+                <label for="albumcomments">Comments:</label><br>
+                <input type="text" id="albumcomments" name="albumcomments"><br>
+                <input type="submit">
+                <br>
             </div>
         </div>
     </body>
+    <script src="script.js"></script>
 </html>

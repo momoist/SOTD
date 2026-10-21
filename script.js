@@ -1,4 +1,3 @@
-window.onload = initDate;
 const genres = ["Rock", "Pop", "Jazz"];
 const selectedGenres = new Set(); 
 
@@ -12,7 +11,6 @@ if (el.addEventListener)
 else if (el.attachEvent)
     el.attachEvent('onclick', addGenre);
 
-
 function initDate() {
     var dayName = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
     var monthName = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
@@ -22,30 +20,35 @@ function initDate() {
     document.getElementById("weekday").innerHTML = dayName[now.getDay()];
 };
 
-function createChips() {
+function initChips() {
     const genreList = document.getElementById("genrechips");
     for (const g of genres) {
         const chip = document.createElement("button");
         chip.type = "button";
         chip.textContent = g;
-        chip.className = "chip" + (selected.has(g) ? " on" : "");
-        chip.onclick = () => {
-            selected.has(g) ? selected.delete(g) : selected.add(g);
-            createChips();
-        };
+        chip.className = "chip";
         genreList.appendChild(chip);
-    }
+    };
 };
 
 function addGenre() {
-    /*window.alert("hello");
-    const inputBox = document.getElementById("addGenre");
-    var newEntry = inputBox.innerHTML;
-    newEntry = newEntry.trim();
-    inputBox.innerHTML = "hello"; 
-    genres.push(newEntry);
-    createChips(); */
-    console.log("hi");
+    const inputBox = document.getElementById("newGenre");
+    var newEntry = inputBox.value;
+    var flag = false
+    for (const element of genres) {
+        if (element == newEntry) {
+            flag = true;
+        };
+    };
+    if (flag == false) {
+        genres.push(newEntry);
+        const genreList = document.getElementById("genrechips");
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.textContent = newEntry;
+        chip.className = "chip";
+        genreList.appendChild(chip);
+    };
 };
 
-createChips(); 
+initChips(); 
