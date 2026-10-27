@@ -32,6 +32,7 @@ function addGenre() {
     };
     if (flag == false) {
         genres.push(newEntry);
+        console.log(genres);
         const genreList = document.getElementById("genrechips");
         const chip = document.createElement("button");
         chip.type = "button";
