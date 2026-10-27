@@ -14,15 +14,6 @@ if (el.addEventListener)
 else if (el.attachEvent)
     el.attachEvent('onclick', addGenre);
 
-function initDate() {
-    var dayName = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
-    var monthName = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
-    var now = new Date();
-    var dateString = monthName[now.getMonth()] + " " + now.getDate();
-    document.getElementById("date").innerHTML = dateString;
-    document.getElementById("weekday").innerHTML = dayName[now.getDay()];
-};
-
 function initChips() {
     const genreList = document.getElementById("genrechips");
     for (const g of genres) {
