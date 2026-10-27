@@ -11,6 +11,7 @@ else if (el.attachEvent)
     el.attachEvent('onclick', addGenre);
 
 function initChips() {
+    window.alert("hello");
     const genreList = document.getElementById("genrechips");
     for (const g of genres) {
         const chip = document.createElement("button");
@@ -22,6 +23,7 @@ function initChips() {
 };
 
 function addGenre() {
+    window.alert(genres);
     const inputBox = document.getElementById("newGenre");
     var newEntry = inputBox.value;
     var flag = false
@@ -32,7 +34,7 @@ function addGenre() {
     };
     if (flag == false) {
         genres.push(newEntry);
-        console.log(genres);
+        window.alert(genres);
         const genreList = document.getElementById("genrechips");
         const chip = document.createElement("button");
         chip.type = "button";
