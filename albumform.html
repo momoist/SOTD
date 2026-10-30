@@ -126,7 +126,7 @@
 
             if (!albumname || !artistname) return; // no nulls
 
-            const { dberror } = await db // keep error from database pushing
+            const { dberror } = await supabase // keep error from database pushing
             .from("albums")
             .upsert( //add to database
                 {
