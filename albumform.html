@@ -121,7 +121,7 @@
 
             if (!albumname || !artistname) return; // no nulls
 
-            const { dberror } = await db // keep error from database pushing
+            const { error } = await db // keep error from database pushing
             .from("albums")
             .upsert( //add to database
                 {
@@ -138,8 +138,8 @@
                 }
             );
 
-            if (dberror) {
-                console.error(dberror); // outputs console error
+            if (error) {
+                console.error(error); // outputs console error
                 alert("Save failed");
                 return;
             }
