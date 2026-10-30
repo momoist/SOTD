@@ -9,10 +9,6 @@
         <link rel="apple-touch-icon" href="/icon-192.png">
     </head>
     <body>
-        <script type="module">
-        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-        const db = createClient('https://aqwewhtbclsofnrvvqjf.supabase.co', 'sb_publishable_s-ITAmB0d6szJ7sy1sFCcw_7H1Pge4C', 'auth.persistSession = true');
-        </script>
         <div id="sotd-page-content">
             <div class="title">
                 <h1>Album Record</h1>
@@ -48,7 +44,9 @@
         </div>
     </body>
 
-    <script>
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+        const db = createClient('https://aqwewhtbclsofnrvvqjf.supabase.co', 'sb_publishable_s-ITAmB0d6szJ7sy1sFCcw_7H1Pge4C', 'auth.persistSession = true');
         const genres = ["Rock", "Pop", "Jazz"];
         const selectedGenres = new Set(); 
         
