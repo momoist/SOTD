@@ -5,14 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <link href="style.css" rel="stylesheet" type="text/css" media="all">
-        <script type="module" src="script.js"></script>
         <!-- <link rel="manifest" href="/manifest.json"> -->
         <link rel="apple-touch-icon" href="/icon-192.png">
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
         <script>
-            const db = createClient('https://aqwewhtbclsofnrvvqjf.supabase.co', 'sb_publishable_s-ITAmB0d6szJ7sy1sFCcw_7H1Pge4C', 'auth.persistSession = true')
+            const db = supabase.createClient('https://aqwewhtbclsofnrvvqjf.supabase.co', 'sb_publishable_s-ITAmB0d6szJ7sy1sFCcw_7H1Pge4C', 'auth.persistSession = true')
         </script>
         <div id="sotd-page-content">
             <div class="title">
