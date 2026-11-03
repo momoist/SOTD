@@ -52,7 +52,23 @@
         
         // event listeners
         document.getElementById("addGenre").addEventListener("click", addGenre);
-        document.getElementById("savebutton").addEventListener("click", saveAlbum)
+        document.getElementById("savebutton").addEventListener("click", saveAlbum);
+
+        // Source - https://stackoverflow.com/a/73391980
+        // Posted by Scott Marcus
+        // Retrieved 2026-11-03, License - CC BY-SA 4.0
+        // Set up an event handler on a common ancestor
+        /*document.addEventListener("click", function(event){
+        // Check to see if the event originated at an element with the "foo" class
+        if(event.target.classList.contains("chip")){
+            if (event.target.class.contains("on")) {
+                selectedGenres.delete(event.target.textContent);
+            } else {
+                event.target.classList.add("on");
+                selectedGenres.add(event.target.textContent);
+            };
+        }
+        });*/
 
         function initChips() {
             const genreList = document.getElementById("genrechips");
@@ -89,8 +105,10 @@
                 chip.onclick = () => {
                     if (selectedGenres.has(chip)) {
                         selectedGenres.delete(chip);
+                        chip.classList.remove("on");
                     } else {
                         selectedGenres.add(chip);
+                        chip.classList.add("on");
                     }
                     initChips();
                 };
