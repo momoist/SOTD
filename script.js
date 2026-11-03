@@ -1,2 +1,0 @@
-import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-const db = createClient('https://aqwewhtbclsofnrvvqjf.supabase.co', 'sb_publishable_s-ITAmB0d6szJ7sy1sFCcw_7H1Pge4C', 'auth.persistSession = true');
