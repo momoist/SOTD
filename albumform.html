@@ -78,6 +78,15 @@
                 chip.type = "button";
                 chip.textContent = g;
                 chip.className = "chip";
+                chip.onclick = () => {
+                    if (selectedGenres.has(chip)) {
+                        selectedGenres.delete(chip);
+                        chip.classList.remove("on");
+                    } else {
+                        selectedGenres.add(chip);
+                        chip.classList.add("on");
+                    }
+                };
                 genreList.appendChild(chip);
             };
         };
@@ -110,8 +119,8 @@
                         selectedGenres.add(chip);
                         chip.classList.add("on");
                     }
-                    initChips();
                 };
+                initChips();
                 genreList.appendChild(chip);
                 console.log(selectedGenres)
             };
