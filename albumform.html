@@ -80,14 +80,14 @@
                 chip.className = "chip";
                 chip.onclick = () => {
                     if (selectedGenres.has(chip)) {
-                        selectedGenres.delete(chip);
+                        selectedGenres.delete(chip.textContent);
                         chip.classList.remove("on");
                     } else {
-                        selectedGenres.add(chip);
+                        selectedGenres.add(chip.textContent);
                         chip.classList.add("on");
                     }
                 };
-                genreList.appendChild(chip);
+                genreList.appendChild(chip.textContent);
             };
         };
 
@@ -113,15 +113,15 @@
                 };
                 chip.onclick = () => {
                     if (selectedGenres.has(chip)) {
-                        selectedGenres.delete(chip);
+                        selectedGenres.delete(chip.textContent);
                         chip.classList.remove("on");
                     } else {
-                        selectedGenres.add(chip);
+                        selectedGenres.add(chip.textContent);
                         chip.classList.add("on");
                     }
                 };
                 initChips();
-                genreList.appendChild(chip);
+                genreList.appendChild(chip.textContent);
                 console.log(selectedGenres)
             };
         };
