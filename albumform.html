@@ -23,7 +23,7 @@
                 <label for="dateListened">Date Listened To:</label><br>
                 <input type="date" id="datelistened" name="datelistened" required><br>
                 <label for="albumrating">Rating:</label><br>
-                <input type="text" id="albumrating" name="albumrating" type="number"><br>
+                <input id="albumrating" name="albumrating" type="number"><br>
                 <div id="genrechips">
                 </div>
                 <div id="addGenreButton">
@@ -31,9 +31,9 @@
                     <button id="addGenre">Add</button>
                 </div>
                 <label for="nosongs">Number of Songs:</label><br>
-                <input type="text" id="nosongs" name="nosongs" type="number"><br>
+                <input id="nosongs" name="nosongs" type="number"><br>
                 <label for="noskips">Number of Skips:</label><br>
-                <input type="text" id="noskips" name="noskips" type="number"><br>
+                <input id="noskips" name="noskips" type="number"><br>
                 <!--top 3 songs?-->
                 <label for="albumcomments">Comments:</label><br>
                 <input type="text" id="albumcomments" name="albumcomments"><br>
@@ -145,8 +145,11 @@
             const noskips = document.getElementById("noskips").value;
             const albumcomments = document.getElementById("albumcomments").value;
 
-            if (!albumname || !artistname) return; // no nulls
-
+            if (!albumname || !artistname || !datelistened) {
+                alert("Fill all required fields"); // no nulls
+            } else if (albumrating < 0 || albumrating > 10) {
+                alert("Rating should be between 0 and 10")
+            };
             const { error } = await db // keep error from database pushing
             .from("albums")
             .upsert( //add to database
